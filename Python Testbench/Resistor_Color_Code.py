@@ -15,11 +15,13 @@ COLORS = {
 
 
 def band_value(bands):
-    tens = COLORS[bands[0]]
-    ones = COLORS[bands[1]]
-    multiplier = COLORS[bands[2]]
+    tens = COLORS[bands[0].strip()]
+    ones = COLORS[bands[1].strip()]
+    multiplier = COLORS[bands[2].strip()]
     return (tens * 10 + ones) * 10 ** multiplier
 
 
-print(band_value(["brown", "black", "red"]))
+print(band_value(input("Please type band colors in order, separated by commas: ").split(",")))
+
+
 
